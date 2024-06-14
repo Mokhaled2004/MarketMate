@@ -137,6 +137,7 @@ background-color:#40aa54;}
     object-fit: contain;
     object-position: center;
     opacity: 0.7;
+    
 }
 .bg-1_rev{
     position: absolute;
@@ -908,4 +909,10 @@ footer{
     .right-nav{
         grid-gap: 5px;
     }
+}
+
+
+.Logo {
+    margin: 10px;
+    width: 140px;
 }
