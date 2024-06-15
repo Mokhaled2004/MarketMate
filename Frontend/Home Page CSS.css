@@ -82,6 +82,7 @@ background-color:#40aa54;}
     background-repeat: no-repeat   ;
     object-position: center;
     border-radius: 50%;
+    transition: all ease 0.3s;
     
 }
 .right-nav .cart{
