@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 body{
-	background: linear-gradient(45deg,#d2001a,#f6d014,#f48e21,#23d5ab);
+	background: linear-gradient(45deg,#8a2ddb,#0467ea,#21aef4,#7405eb);
 	background-size: 300% 300%;
 	animation : color 12s ease-in-out infinite;
 }
@@ -70,16 +70,16 @@ body{
 	bottom: 20px;
 	right: 20px;
 	padding: 10px 25px;
-	background-color: red;
-	color: white;
+	background-color: rgb(255, 191, 0);
+	color: rgb(7, 7, 7);
 	cursor: pointer;
 	border-radius: 5px;
 }
 .product-remove:hover{
-	background-color: white;
-	color: red;
+	background-color: rgb(250, 85, 8);
+	color: rgb(253, 249, 249);
 	font-weight: 600;
-	border: 1px solid red;
+	border: 1px solid rgb(250, 85, 8);
 }
 .product-quantity > input{
 	width: 40px;
@@ -109,12 +109,13 @@ body{
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
-	background-color: #32b350;
-	color: white;
+	background-color: rgb(255, 191, 0);
+	color: rgb(0, 0, 0);
 	text-decoration: none;
 }
 .cart-total a:hover{
-	background-color: #74d88b;
+	color :rgb(253, 249, 249)	;
+	background-color: rgb(250, 85, 8);
 }
 @media screen and (max-width: 700px){
 	.remove{
