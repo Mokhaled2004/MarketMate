@@ -115,28 +115,25 @@ background-color:#40aa54;}
 #search-banner{
     max-width: 1250px;
     height: 500px;
-    border-radius: 30px;
-    background-color: #ecf7ee;
+    border-radius: 33px;
+    background-color: #fafbfa;
     margin: 10px auto;
     position: relative;
     overflow: hidden;
-    background-image: url(Frontend\images\images\bg-1.png);
+    background-image: url(Frontend\images\images\Fly2.jpeg);
     background-repeat: no-repeat;
-    background-size: 1000px;
-    background-position: bottom right;
-    padding: 20px;
+    background-size: 1250px;
+    background-position: left;
     display: flex;
     align-items: center;
 }
 .bg-1{
     position: absolute;
-    left: -50px;
-    top: -150px;
-    width: 300px;
-    height: 500px;
-    object-fit: contain;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
-    opacity: 0.7;
+    opacity: 1;
     
 }
 .bg-1_rev{
