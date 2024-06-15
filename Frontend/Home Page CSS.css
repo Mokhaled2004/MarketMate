@@ -241,13 +241,7 @@ background-color:#40aa54;}
     margin: 1rem 2rem;
 }
 
-.countdown-el {
-    text-align: center;
-}
 
-.countdown-el span {
-    font-size: 1.3rem;
-}
 /* category */
 #category,
 #popular-product,
@@ -260,7 +254,8 @@ background-color:#40aa54;}
 }
 .category-heading,
 .product-heading,
-.partner-heading{
+.partner-heading,
+.store-heading{
     display: flex;
     justify-content: space-between;
     align-items: center;
