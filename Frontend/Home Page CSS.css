@@ -74,6 +74,16 @@ background-color:#40aa54;}
     background-color: #fff0ee;
     color: #ff6c57;
 }
+
+.right-nav .like img{ 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat   ;
+    object-position: center;
+    border-radius: 50%;
+    
+}
 .right-nav .cart{
     background-color: #ecf7ee;
     color: #4eb060;
@@ -133,7 +143,7 @@ background-color:#40aa54;}
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 1;
+    opacity: .8;
     
 }
 
@@ -148,7 +158,12 @@ background-color:#40aa54;}
 .search-banner-text h1{
     font-size: 3rem;
     line-height: 55px;
-    color: #202020;
+    color: #f4f2f2;
+    text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 .search-banner-text strong{
     color: #66b80f;
