@@ -267,7 +267,7 @@ background-color:#40aa54;}
 .category-heading span,
 .product-heading span
 {
-    color: #a7a7a7;
+    color: #ffffff;
     font-weight: 400;
     letter-spacing: 1px;
     padding-top: 100px;
@@ -302,6 +302,7 @@ background-color:#40aa54;}
     width: 120px;
     border: 1px solid rgba(0,0,0,0.03);
     cursor: pointer;
+    animation: float 3s ease-in-out infinite;
 }
 
 .store-box{
@@ -332,7 +333,7 @@ background-color:#40aa54;}
     transition: all ease 0.1s;
 }
 .category-box span{
-    color: #393939;
+    color: #a29f9f;
     font-size: 0.8rem;
     margin-top: 20px;
     letter-spacing: 0.3px;
@@ -343,6 +344,19 @@ background-color:#40aa54;}
 {
     transform: scale(1.1);
     transition: all ease 0.1s;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 /* popular-product */
 #popular-product{
@@ -403,15 +417,19 @@ background-color:#40aa54;}
     margin-top: 20px;
     transition: all ease 0.3s;
     border-radius: 20px;
+   
 }
 .product-box .cart-btn i{
     margin-right: 10px;
+    
 }
 .product-box .cart-btn:hover{
     background-color: #eb9409;
     color: #ffffff;
     transition: all ease 0.3s;
 }
+
+
 .product-box .like-btn{
     position: absolute;
     right: 30px;
