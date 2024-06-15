@@ -41,7 +41,7 @@ background-color:#40aa54;}
 .menu li a{
     padding: 3px 10px;
     margin: 0px 15px;
-    color: #3b3b3b;
+    color: #161515;
     font-weight: 500;
     letter-spacing: 0.5px;
     transition: all ease 0.3s;
@@ -118,7 +118,7 @@ background-color:#40aa54;}
 }
 .menu li a:hover,
 .menu .active{
-    color: #40aa54;
+    color:  #ef8809;
     transition: all ease 0.3s;
 }
 
