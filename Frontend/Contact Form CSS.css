@@ -9,7 +9,9 @@
   }
 
   body{
-      background: #c8efd1;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(#e8cc68,#eb9409,#66380d);
   }
 
   .wrapper{
@@ -50,7 +52,7 @@
       padding: 10px;
       text-align: center;
       width: 100%;
-      background: #fece0c;
+      background: #f56c04;
       color: #332902;
       text-transform: uppercase;
       letter-spacing: 5px;
@@ -70,10 +72,10 @@
 
   .btn {
     border-radius:20px;
-	color:#fff;
 	margin-top:18px;
 	padding:10px;
-	background-color:#4ccd6a;
+	background-color: #e8cc68;
+    color: #66380d;
 	font-size:15px;
 	border:none;
 	cursor:pointer;
@@ -83,7 +85,8 @@
   }
 
   .btn:hover {
-      color:#78d98f;
-      opacity: 0.8;
+    background-color: #eb9409;
+    
+      color:#ffffff;
       transition: 0.3s all ease-in;
   }
