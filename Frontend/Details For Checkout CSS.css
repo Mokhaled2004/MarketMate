@@ -11,7 +11,7 @@ body{
     height: 100vh;
     display: grid;
     align-items: center;
-    background: linear-gradient(120deg,#2980b9,#8e44ad);
+    background: linear-gradient(45deg,#2d1b0b,#623103,#bc824c);
 }
 
 .contact-in{
@@ -103,7 +103,7 @@ body{
     border: none;
     outline: none;
     border-radius: 50px;
-    background: linear-gradient(120deg,#2980b9,#8e44ad);
+    background: linear-gradient(45deg,#2d1b0b,#623103,#bc824c);
     color: #fff;
     text-transform: uppercase;
     padding: 10px 0;
