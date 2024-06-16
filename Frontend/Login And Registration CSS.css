@@ -15,7 +15,7 @@ body {
 }
 
 .sec {
-    background: #74d88b;
+    background: #66380d;
     width: 35%;
     position: absolute;
     left:65%;
@@ -26,7 +26,7 @@ body {
 }
 
 .head h1 {
-    color: #78d98f;
+    color: #66380d;
     text-align: center;
     font-weight: bolder;
     font-size: 2.2em;
@@ -272,23 +272,23 @@ form a {
 }
 
 .sign_in_btn {
-    background-color: #78d98f;
+    background-color: #66380d;
     cursor: pointer;
 }
 
 .sign_in_btn:hover {
     transition: 0.3s all ease-in;
-    background-color: #9ce2ad;
+    background-color: #945921;
 }
 
 .sign_up_btn {
-    background-color: #78d98f;
+    background-color: #66380d;
     cursor: pointer;
 }
 
 .sign_up_btn:hover {
     transition: 0.3s all ease-in;
-    background-color: #9ce2ad;
+    background-color: #945921;
 }
 
 .prompt_sign_in:hover {
