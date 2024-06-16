@@ -10,7 +10,7 @@
 .section {
     width: 100%;
     min-height: 100vh;
-	background: linear-gradient(#2d1b0b,#623103,#bc824c);
+	background-color: #a86e38;
 }
 
 .container {
@@ -35,26 +35,27 @@
 .image-section img {
     width: 100%;
     height: auto;
+    margin-top: -60px;
 }
 
 .content-section .title {
     text-transform: uppercase;
     font-size: 28px;
-    color :#a45e1c ;
+    color :#040404 ;
 }
 
 
 .content-section .content h3 {
     margin-top: 20px;
-    color: #5d5d5d;
+    color: #000000;
     font-size: 19px;
 }
 
 .content-section .content p {
     margin-top: 10px;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.5;
-    color: #eeab6b;
+    color: #000000;
 }
 
 .content-section .content .button {

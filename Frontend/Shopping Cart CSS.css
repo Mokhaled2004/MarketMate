@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 body{
-	background: linear-gradient(45deg,#2d1b0b,#623103,#bc824c);
+	
 	background-size: 300% 300%;
 	animation : color 12s ease-in-out infinite;
 }
@@ -70,7 +70,7 @@ body{
 	bottom: 20px;
 	right: 20px;
 	padding: 10px 25px;
-	background-color: #e2ac1a;
+	background-color: #9a693b;;
 	color: #ffffff;
 	cursor: pointer;
 	border-radius: 5px;
@@ -109,7 +109,7 @@ body{
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
-	background-color: #e2ac1a;
+	background-color: #9a693b;;
 	color: #ffffff;
 	text-decoration: none;
 }
