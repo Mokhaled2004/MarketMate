@@ -4,7 +4,7 @@
 This Module contains a definition for BaseModel Class
 """
 
-from MarketMate import Models
+import Models
 import uuid
 from datetime import datetime
 
