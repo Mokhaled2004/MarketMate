@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the Order class."""
 
-from MarketMate.Models.base_model import BaseModel
+from Models.base_model import BaseModel
 
 class Order(BaseModel):
     

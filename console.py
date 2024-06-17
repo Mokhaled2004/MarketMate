@@ -98,16 +98,16 @@ class MarketMateCommand(cmd.Cmd):
         """Create a new instance of a class
         Create a new class instance and print its id."""
         
-    argl = parse(arg)
-    if len(argl) == 0:
-        print("** class name missing **")
+        argl = parse(arg)
+        if len(argl) == 0:
+            print("** class name missing **")
     
-    elif argl[0] not in MarketMateCommand.__classes:
-        print("** class doesn't exist **")
+        elif argl[0] not in MarketMateCommand.__classes:
+            print("** class doesn't exist **")
         
-    else:
+        else:
         
-        print(eval(argl[0])().id)
+            print(eval(argl[0])().id)
         storage.save()
         
     def do_show(self, arg):

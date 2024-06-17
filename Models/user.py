@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the User class."""
 
-from MarketMate.Models.base_model import BaseModel
+from base_model import BaseModel
 
 class User(BaseModel):
     

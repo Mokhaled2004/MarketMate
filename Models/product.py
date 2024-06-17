@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the Product  class."""
 
-from MarketMate.Models.base_model import BaseModel
+from base_model import BaseModel
 
 class Product(BaseModel):
     
