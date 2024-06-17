@@ -3,7 +3,7 @@
 
 
 
-from Models.base_model import BaseModel
+from MarketMate.Models.base_model import BaseModel
 
 class Market(BaseModel):
     

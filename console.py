@@ -5,13 +5,13 @@
 import cmd
 import re
 from shlex import split
-from Models import storage
-from Models.base_model import BaseModel 
-from Models.user import User
-from Models.product import Product
-from Models.review import Review
-from Models.order import Order
-from Models.market import Market
+from models import storage
+from models.base_model import BaseModel 
+from models.user import User
+from models.product import Product
+from models.review import Review
+from models.order import Order
+from models.market import Market
 
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
