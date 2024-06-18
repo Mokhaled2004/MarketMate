@@ -3,6 +3,7 @@
 
 This Module contains a definition for BaseModel Class
 """
+import Models
 import uuid
 from datetime import datetime
 

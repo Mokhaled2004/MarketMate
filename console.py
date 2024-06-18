@@ -5,7 +5,7 @@
 import cmd
 import re
 from shlex import split
-from Models import storage
+from Models.engine.file_storage import FileStorage
 from Models.base_model import BaseModel 
 from Models.user import User
 from Models.product import Product
@@ -108,7 +108,7 @@ class MarketMateCommand(cmd.Cmd):
         else:
         
             print(eval(argl[0])().id)
-        storage.save()
+        FileStorage.save(self)
         
     def do_show(self, arg):
         """Usage: show <class> <id> or <class>.show(<id>)
@@ -116,7 +116,7 @@ class MarketMateCommand(cmd.Cmd):
         """     
         
         argl = parse(arg)
-        objdict = storage.all()
+        objdict = FileStorage.all(self)
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in MarketMateCommand.__classes:
@@ -135,7 +135,7 @@ class MarketMateCommand(cmd.Cmd):
         """
         
         argl = parse(arg)
-        objdict = storage.all()
+        objdict = FileStorage.all(self)
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in MarketMateCommand.__classes:
@@ -146,7 +146,7 @@ class MarketMateCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del objdict["{}.{}".format(argl[0], argl[1])]
-            storage.save()
+            FileStorage.save(self)
         
     def do_all(self, arg):
         """Usage: all or all <class> or <class>.all()
@@ -161,7 +161,7 @@ class MarketMateCommand(cmd.Cmd):
         else:
             
             objl = []
-            for obj in storage.all().values():
+            for obj in FileStorage.all(self).values():
                 if len(argl) > 0 and argl[0] == obj.__class__.__name__:
                     objl.append(str(obj.__str__()))
                 elif len(argl) == 0:
@@ -176,7 +176,7 @@ class MarketMateCommand(cmd.Cmd):
         
         argl = parse(arg)
         count = 0
-        for obj in storage.all().values():
+        for obj in FileStorage.all(self).values():
             if argl[0] == obj.__class__.__name__:
                 count += 1
                         
@@ -193,7 +193,7 @@ class MarketMateCommand(cmd.Cmd):
         """
         
         argl = parse(arg)   
-        objdict = storage.all()
+        objdict = FileStorage.all(self)
         
         if len(argl) == 0:
             print("** class name missing **")
@@ -234,9 +234,9 @@ class MarketMateCommand(cmd.Cmd):
                     obj.__dict__[k] = valtype(v)
                 else:
                     obj.__dict__[k] = v
-        storage.save()
+        FileStorage.save(self)
         
         
-        if __name__ == "__main__":
-            MarketMateCommand().cmdloop()
+if __name__ == "__main__":
+    MarketMateCommand().cmdloop()
         
