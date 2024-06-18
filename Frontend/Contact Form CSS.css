@@ -11,8 +11,10 @@
   body{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(#2d1b0b,#623103,#aa784a);
+    background-color: #eebe4560;
   }
+
+
 
   .wrapper{
       position: absolute;
