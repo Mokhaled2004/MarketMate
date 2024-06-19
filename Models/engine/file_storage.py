@@ -8,6 +8,7 @@ from Models.product import Product
 from Models.review import Review
 from Models.order import Order
 from Models.market import Market
+import shlex
 
 class FileStorage:
     """Represent an abstracted storage engine.
@@ -20,29 +21,60 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
     
-    def all(self):
-        """Return the dictionary of objects."""
-        return FileStorage.__objects
+    def all(self, cls=None):
+        """returns a dictionary
+        Return:
+            returns a dictionary of __object
+        """
+        dic = {}
+        if cls:
+            dictionary = self.__objects
+            for key in dictionary:
+                partition = key.replace('.', ' ')
+                partition = shlex.split(partition)
+                if (partition[0] == cls.__name__):
+                    dic[key] = self.__objects[key]
+            return (dic)
+        else:
+            return self.__objects
     
     def new(self, obj):
-        """Add a new object to the dictionary."""
-        FileStorage.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
+        """sets __object to given obj
+        Args:
+            obj: given object
+        """
+        if obj:
+            key = "{}.{}".format(type(obj).__name__, obj.id)
+            self.__objects[key] = obj
         
     def save(self):
-        """Serialize __objects to the JSON file __file_path."""
-        odict = FileStorage.__objects
-        objdict = {obj: odict[obj].to_dict() for obj in odict.keys()} 
-        with open(FileStorage.__file_path, 'w') as f:
-            json.dump(objdict, f)
+        """serialize the file path to JSON file path
+        """
+        my_dict = {}
+        for key, value in self.__objects.items():
+            my_dict[key] = value.to_dict()
+        with open(self.__file_path, 'w', encoding="UTF-8") as f:
+            json.dump(my_dict, f)
             
     def reload(self):
-        """Deserialize the JSON file __file_path to __objects."""
+        """serialize the file path to JSON file path
+        """
         try:
-            with open(FileStorage.__file_path, 'r') as f:
-                objdict = json.load(f)
-                for obj in objdict.values():
-                    cls_name = obj['__class__']
-                    del obj['__class__']
-                    self.new(eval(cls_name)(**obj))
+            with open(self.__file_path, 'r', encoding="UTF-8") as f:
+                for key, value in (json.load(f)).items():
+                    value = eval(value["__class__"])(**value)
+                    self.__objects[key] = value
         except FileNotFoundError:
-            return
+            pass
+
+    def delete(self, obj=None):
+        """ delete an existing element
+        """
+        if obj:
+            key = "{}.{}".format(type(obj).__name__, obj.id)
+            del self.__objects[key]
+            
+    def close(self):
+        """ calls reload()
+        """
+        self.reload()
