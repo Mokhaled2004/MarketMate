@@ -1,32 +1,21 @@
 #!/usr/bin/python3
 """Defines the Order class."""
 
-from Models.base_model import BaseModel
+from sqlalchemy.ext.declarative import declarative_base
+from Models.base_model import BaseModel, Base
+from sqlalchemy import Column, Integer, String
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
+from Models.user import User
 
-class Order(BaseModel):
+class Order(BaseModel, Base):
     
-    name = ""
-    price = 0.0
-    quantity = 0
-    user_id = ""
-    product_id = ""
-    status = "pending"
-    payment_id = ""
-    shipping_id = ""
-    tracking_id = ""
-    tracking_url = ""
-    tracking_status = ""
-    tracking_location = ""
-    tracking_date = ""
-    tracking_notes = ""
-    tracking_delivered = False
-    tracking_delivered_date = ""
-    tracking_delivered_location = ""
-    tracking_delivered_notes = ""
-    tracking_delivered_signature = ""
-    tracking_delivered_signature_url = ""
-    tracking_delivered_signature_date = ""
-    tracking_delivered_signature_location = ""
-    tracking_delivered_signature_notes = ""
+    __tablename__ = "orders"
+    price = Column(Integer, nullable=False)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    market_name = Column(String(128), nullable=False)
+    user = relationship("user", back_populates="orders")
+    
+    
 
         
