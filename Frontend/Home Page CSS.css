@@ -25,6 +25,7 @@ background-color:#40aa54;}
  
 /* Navigation */
 .navigation{
+    
     display: flex;
     justify-content: space-between;
     align-items: center;

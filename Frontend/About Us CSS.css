@@ -139,3 +139,107 @@
     }
 
 }
+
+  /* Navigation */
+  .navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    max-width: 1070px;
+    width: 100%;
+    margin: auto;
+    margin-left: 90px;
+  }
+  
+  .menu{
+    display: flex;
+  align-items:left;
+    list-style-type: none;
+  }
+  
+  .menu li a:hover,
+  .menu .active{
+    color:  #ef8809;
+    transition: all ease 0.3s;
+  }
+  
+  .menu li a{
+    padding: 3px 10px;
+    margin: 0px 15px;
+    color: #161515;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all ease 0.3s;
+    text-decoration: none;
+    
+  
+  }
+  
+  .right-nav{
+    display: flex;
+    grid-template-columns: auto auto;
+    grid-gap: 25px;
+  }
+  .right-nav a{
+    width:40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+  }
+  .right-nav .like{
+    background-color: #fff0ee;
+    color: #ff6c57;
+  }
+  
+  .right-nav .like img{ 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat   ;
+    object-position: center;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+    
+  }
+  .right-nav .cart{
+    background-color: #ecf7ee;
+    color: #4eb060;
+  }
+  .right-nav .user-profile{
+    background-color: #ecf7ee;
+    color: rgb(139, 195, 221);
+  }
+  .right-nav a span{
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width:20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 500;
+  }
+  .right-nav .like span{
+    background-color: #ff6c57;
+  }
+  .right-nav .cart span{
+    background-color: #4eb060;
+  }
+  .right-nav .user-profile span{
+    background-color: rgb(95, 183, 224);
+  }
+  
+  .Logo {
+    margin: 10px;
+    width: 140px;
+  }
+  
+  /* Navigation ENd*/
