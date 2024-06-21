@@ -6,13 +6,13 @@ import sys
 import re
 from shlex import split
 from Models.engine.file_storage import FileStorage
-from models.__init__ import storage
+from Models.__init__ import storage
 from Models.base_model import BaseModel 
 from Models.user import User
 from Models.product import Product
 from Models.review import Review
 from Models.order import Order
-from Models.market import Market
+
 
 class MarketMateCommand(cmd.Cmd):
     
@@ -23,7 +23,7 @@ class MarketMateCommand(cmd.Cmd):
     
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Product': Product,
-               'Order': Order, 'Market': Market, 'Review': Review
+               'Order': Order, 'Review': Review
               }
     
     dot_cmds = ['all', 'count', 'show', 'destroy', 'update']

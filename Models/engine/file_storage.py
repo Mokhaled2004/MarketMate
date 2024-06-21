@@ -7,7 +7,6 @@ from Models.user import User
 from Models.product import Product
 from Models.review import Review
 from Models.order import Order
-from Models.market import Market
 import shlex
 
 class FileStorage:

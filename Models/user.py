@@ -5,8 +5,6 @@ from Models.base_model import BaseModel, Base
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from os import getenv
-from Models.review import Review
 from hashlib import md5
 
 
@@ -16,6 +14,7 @@ class User(BaseModel, Base):
     
     """Represents a user for the application."""
     if Models.storage_t == 'db':
+
         __tablename__ = 'users'
         email = Column(String(128), nullable=False)
         password = Column(String(128), nullable=False)
@@ -23,8 +22,8 @@ class User(BaseModel, Base):
         last_name = Column(String(128), nullable=True)
         phone_number = Column(String(20), nullable=True)
         address = Column(String(256), nullable=True)
-        orders = relationship("order", backref="user")
-        reviews = relationship("review", backref="user")
+        orders = relationship("order", cascade='all,delete,delete-orphan',backref="user")
+        reviews = relationship("review",cascade='all,delete,delete-orphan', backref="user")
     else:
         email = ""
         password = ""

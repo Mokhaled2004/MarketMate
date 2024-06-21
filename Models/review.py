@@ -10,10 +10,10 @@ class Review(BaseModel):
     
     
     __tablename__ = "reviews"
+
+    review_id = Column(Integer, primary_key=True, nullable=False)
     text = Column(String(1024), nullable=False)
-    market_id = Column(String(60), ForeignKey("market.id"), nullable=False)
-    user_id = Column(String(60), ForeignKey("user.id"), nullable=False)
+    user_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     rating = Column(Float, nullable=False)
-    text = Column(String(1024), nullable=False)
     
  

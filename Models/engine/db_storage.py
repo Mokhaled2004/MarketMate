@@ -7,12 +7,12 @@ import Models
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from os import getenv
-from Models.base_model import Base,BaseModel
+from Models.base_model import BaseModel, Base
 from Models.user import User
 from Models.order import Order
 from Models.review import Review
 from Models.product import Product
+from os import getenv
 
 classes = {"Order": Order, "Product": Product,
            "User": User, "Review": Review}
@@ -26,30 +26,36 @@ class DBStorage:
 
 def __init__(self):
         """Instantiate a DBStorage object"""
-        MarketMate_MYSQL_USER = getenv('HBNB_MYSQL_USER')
-        MarketMate_PWD = getenv('HBNB_MYSQL_PWD')
-        MarketMate_HOST = getenv('HBNB_MYSQL_HOST')
-        MarketMate_MYSQL_DB = getenv('HBNB_MYSQL_DB')
-        MarketMate_ENV = getenv('HBNB_ENV')
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
-                                      format( MarketMate_MYSQL_USER,
-                                            MarketMate_MYSQL_PWD,
-                                            MarketMate_MYSQL_HOST,
-                                            MarketMate_MYSQL_DB))
-        
-        if MarketMate_ENV == "test":
-            Base.metadata.drop_all(self.__engine)
+        user = getenv('MarketMate_MYSQL_USER')
+        passwd = getenv('MarketMate_MYSQL_PWD')
+        host = getenv('MarketMate_MYSQL_HOST')
+        db = getenv('MarketMate_MYSQL_DB')
+        env = getenv('MarketMate_ENV')
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
+                                      .format(user, passwd, host, db),
+                                      pool_pre_ping=True)
+                                            
+                                        
+        if env == "test":
+                Base.metadata.drop_all(self.__engine)
             
 def all(self, cls=None):
-        """query on the current database session"""
-        new_dict = {}
-        for clss in classes:
-            if cls is None or cls is classes[clss] or cls is clss:
-                objs = self.__session.query(classes[clss]).all()
-                for obj in objs:
-                    key = obj.__class__.__name__ + '.' + obj.id
-                    new_dict[key] = obj
-        return (new_dict)
+        dic = {}
+        if cls:
+            if type(cls) is str:
+                cls = eval(cls)
+            query = self.__session.query(cls)
+            for elem in query:
+                key = "{}.{}".format(type(elem).__name__, elem.id)
+                dic[key] = elem
+        else:
+            lista = [Product,Order, User, Review]
+            for clase in lista:
+                query = self.__session.query(clase)
+                for elem in query:
+                    key = "{}.{}".format(type(elem).__name__, elem.id)
+                    dic[key] = elem
+        return (dic)
     
     
 def new(self, obj):

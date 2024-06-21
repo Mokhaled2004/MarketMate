@@ -2,11 +2,11 @@
 
 from Models.engine.file_storage import FileStorage
 from Models.engine.db_storage import DBStorage
-import Models.base_model
-import Models.user
-import Models.order
-import Models.review
-import Models.product
+from Models.base_model import BaseModel
+from Models.user import User
+from Models.product import Product
+from Models.order import Order
+from Models.review import Review
 from os import getenv
 
 
