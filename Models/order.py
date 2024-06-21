@@ -7,11 +7,11 @@ from Models.base_model import BaseModel, Base
 from sqlalchemy import Column, Table, String, Integer, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from os import getenv
-import Models.product
+from Models.product import Product
 
 order_product = Table ("order_product", Base.metadata,
                       Column("order_id", Integer, ForeignKey("orders.order_id"), primary_key=True),
-                    Column("product_id", Integer, ForeignKey("products.product_id"), primary_key=True))
+                      Column("product_id", Integer, ForeignKey("products.product_id"), primary_key=True))
 
 
 class Order(BaseModel, Base):
