@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defines the User class."""
 
-from Models.base_model import BaseModel, Base
+from base_model import BaseModel, Base
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship

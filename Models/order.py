@@ -3,11 +3,11 @@
 
 import shlex
 from sqlalchemy.ext.declarative import declarative_base
-from Models.base_model import BaseModel, Base
+from base_model import BaseModel, Base
 from sqlalchemy import Column, Table, String, Integer, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from os import getenv
-from Models.product import Product
+from product import Product
 
 order_product = Table ("order_product", Base.metadata,
                       Column("order_id", Integer, ForeignKey("orders.order_id"), primary_key=True),
