@@ -6,11 +6,11 @@ import os
 # Add the Models directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'Models')))
 import json
-from base_model import BaseModel
-from user import User
-from product import Product
-from review import Review
-from order import Order
+from Models.base_model import BaseModel
+from Models.user import User
+from Models.product import Product
+from Models.review import Review
+from Models.order import Order
 import shlex
 
 class FileStorage:
